@@ -14,9 +14,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
  
 // Use the passport package in our application
-app.use(passport.initialize());
-var passportMiddleware = require('./middleware/passport');
-passport.use(passportMiddleware);
+//app.use(passport.initialize());
+//var passportMiddleware = require('./middleware/passport');
+//passport.use(passportMiddleware);
  
 // Demo Route (GET http://localhost:5000)
 app.get('/', function(req, res) {

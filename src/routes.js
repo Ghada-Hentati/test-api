@@ -1,17 +1,22 @@
 var express         = require('express'),
     routes          = express.Router();
-var userController  = require('./controller/user-controller');
 var passport	    = require('passport');
+var User = require('./models/user');
  
 routes.get('/', (req, res) => {
     return res.send('Hello, this is the API!');
 });
- 
-routes.post('/register', userController.registerUser);
-routes.post('/login', userController.loginUser);
 
-routes.get('/special', passport.authenticate('jwt', { session: false }), (req, res) => {
-    return res.json({ msg: `Hey ${req.user.email}! I open at the close.` });
-});
+// GET
+// Get all open list
+routes.get('/list', function (req, res) {
+    User.find({}).then((list) => {
+     res.send(list);
+  }).catch((error) => {
+    res.status(500).send(error);
+  })
+  
+})  
+
 
 module.exports = routes;

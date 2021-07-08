@@ -1,8 +1,3 @@
 module.exports = {
-    jwtSecret: 'maskup-secret-key',
-    db: 'mongodb+srv://ghadanawel:maskup@maskup.eobya.mongodb.net/ionic-jwt?retryWrites=true&w=majority'
-    //db: 'mongodb://localhost/ionic-jwt'
-    //db: 'mongodb://192.168.0.5:9999/foo'
+    db: 'mongodb+srv://ghadanawel:maskup@maskup.eobya.mongodb.net/calendar?retryWrites=true&w=majority'
 };
-//username: ghadanawel
-//password: maskup
